@@ -1,0 +1,286 @@
+/* Hero Section Container */
+*{
+ font-family: 'Poppins', sans-serif !important;
+}
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 90px);
+  padding: 40px 0 80px;
+  overflow: hidden;
+
+}
+
+/* Background Yellowish Gradient Blob (matching design) */
+.hero-bg-decore {
+
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(255, 241, 218, 0.9) 0%, rgba(254, 245, 229, 0.4) 60%, transparent 100%);
+  border-radius: 50%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-container {
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Left Content Styles */
+.hero-content {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-subtitle {
+      text-align: left;
+  font-size: 18px;
+  /* font-weight: 600; */
+  color: #df6951;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  /* margin-bottom: 24px; */
+}
+
+.hero-title {
+      text-align: left;
+  font-size: 68px;
+  font-weight: 800;
+  color: #181e4b;
+  line-height: 1.15;
+  letter-spacing: -2px;
+  margin-bottom: 28px;
+
+}
+
+/* Red Brush Underline on "enjoy" */
+.highlight-enjoy {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.highlight-enjoy::after {
+  content: '';
+  position: absolute;
+  left: -5%;
+  bottom: 8px;
+  width: 110%;
+  height: 10px;
+  background-color: rgba(223, 105, 81, 0.7);
+  border-radius: 20px;
+  transform: rotate(-1.5deg);
+  z-index: -1;
+}
+
+.hero-description {
+    text-align: left;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5e6282;
+  max-width: 470px;
+  margin-bottom: 36px;
+  font-weight: 500;
+
+}
+
+/* Buttons Section */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.cta-btn {
+  background-color: #f1a501;
+  color: #ffffff;
+  border: none;
+  padding: 18px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 20px 35px rgba(241, 165, 1, 0.25);
+  transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #e09900;
+  transform: translateY(-3px);
+  box-shadow: 0px 25px 40px rgba(241, 165, 1, 0.35);
+}
+
+.cta-btn:active {
+  transform: translateY(0);
+}
+
+/* Play Demo Button */
+.play-demo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.play-btn {
+  width: 52px;
+  height: 52px;
+  background-color: #df6951;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 15px 30px rgba(223, 105, 81, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-icon {
+  color: #ffffff;
+  font-size: 14px;
+  margin-left: 3px;
+}
+
+.play-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #686d77;
+  transition: color 0.3s ease;
+}
+
+.play-demo-wrapper:hover .play-btn {
+  transform: scale(1.1);
+  box-shadow: 0px 20px 35px rgba(223, 105, 81, 0.4);
+}
+
+.play-demo-wrapper:hover .play-text {
+  color: #df6951;
+}
+
+/* Right Image Side */
+.hero-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.traveler-img {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 20px 30px rgba(0, 0, 0, 0.1));
+}
+
+/* Floating Planes Animation */
+.plane {
+  position: absolute;
+  color: #1da1f2;
+  font-size: 28px;
+  pointer-events: none;
+  animation: floatPlane 4s ease-in-out infinite alternate;
+}
+
+.plane-left {
+  top: 10%;
+  left: 0%;
+  transform: rotate(-15deg);
+}
+
+.plane-right {
+  top: 20%;
+  right: -5%;
+  transform: rotate(20deg);
+  animation-delay: 2s;
+}
+
+@keyframes floatPlane {
+  0% {
+    transform: translateY(0px) rotate(-10deg);
+  }
+  100% {
+    transform: translateY(-18px) rotate(5deg);
+  }
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Laptop / Medium Screens (1024px and below) */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 52px;
+  }
+  .hero-bg-decore {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+/* Tablet Screens (768px and below) */
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .hero-content {
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .traveler-img {
+    max-width: 420px;
+  }
+}
+
+/* Mobile Screens (480px and below) */
+@media (max-width: 480px) {
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .cta-btn {
+    width: 100%;
+  }
+
+  .traveler-img {
+    max-width: 300px;
+  }
+}

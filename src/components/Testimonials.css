@@ -1,0 +1,236 @@
+/* Testimonials Section */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.testimonials-section {
+  width: 100%;
+  padding: 100px 0 60px;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Left Title Area */
+.testimonials-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  /* font-weight: 700; */
+  color: #5e6282;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 50px;
+  font-weight: 800;
+  color: #181e4b;
+ 
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+
+/* Pagination Dots */
+.pagination-dots {
+  display: flex;
+  gap: 15px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e5e5e5;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #181e4b;
+}
+
+/* Right Testimonial Slider Area */
+.testimonials-right {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+/* Stacked Card Styling */
+.testimonial-card {
+  background: #ffffff;
+  padding: 36px 32px;
+  border-radius: 20px;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02),
+              0px 30px 50px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease-in-out;
+}
+
+.active-card {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.background-card {
+  position: absolute;
+  top: 40px;
+  left: 30px;
+  width: 90%;
+  max-width: 480px;
+  opacity: 0.4;
+  z-index: 1;
+  transform: scale(0.95);
+  pointer-events: none;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Author Avatar */
+.author-avatar {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Quote & Details */
+.testimonial-quote {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5e6282;
+  font-weight: 500;
+  margin-bottom: 34px;
+}
+
+.author-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #181e4b;
+  margin-bottom: 4px;
+}
+
+.author-location {
+  font-size: 14px;
+  font-weight: 500;
+  color: #5e6282;
+}
+
+/* Slider Arrow Controls */
+.slider-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 40px;
+}
+
+.slider-arrow {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #bcbcbc;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 8px;
+}
+
+.slider-arrow:hover {
+  color: #181e4b;
+}
+
+/* Partner Logos Section */
+.partners-container {
+  max-width: 1200px;
+  margin: 100px auto 0;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.partner-logo {
+  background: #ffffff;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.03);
+  font-size: 20px;
+  font-weight: 700;
+  color: #4a5568;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.partner-logo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.08);
+  background-color: #181e4b;
+  color: #ffffff;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media (max-width: 1024px) {
+  .testimonials-container {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+
+  .testimonials-right {
+    justify-content: center;
+  }
+
+  .slider-controls {
+    flex-direction: row;
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 32px;
+  }
+
+  .active-card {
+    padding: 24px 20px;
+  }
+
+  .partners-container {
+    justify-content: center;
+  }
+}

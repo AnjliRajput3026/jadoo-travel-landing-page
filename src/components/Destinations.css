@@ -1,0 +1,150 @@
+/* Destinations Section Styles */
+.destinations-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+.destinations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Header */
+.destinations-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.destinations-subtitle {
+  font-size: 18px;
+  /* font-weight: 700; */
+  color: #5e6282;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.destinations-title {
+  font-size: 50px;
+  font-weight: 800;
+  color: #181e4b;
+  font-family: 'Volkhov', serif, sans-serif;
+}
+
+/* Grid Layout */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* Destination Card */
+.destination-card {
+  background: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.02), 
+              0px 40px 48px rgba(0, 0, 0, 0.04), 
+              0px 16px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* Image Wrapper */
+.destination-img-wrapper {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.destination-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.destination-card:hover .destination-img {
+  transform: scale(1.05);
+}
+
+/* Content Area */
+.destination-content {
+  padding: 24px 26px 32px 26px;
+  background-color: #ffffff;
+}
+
+.destination-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.destination-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #5e6282;
+}
+
+.destination-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #5e6282;
+}
+
+.destination-trip-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.trip-icon {
+  font-size: 14px;
+  color: #5e6282;
+}
+
+.trip-duration {
+  font-size: 16px;
+  font-weight: 500;
+  color: #5e6282;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .destinations-title {
+    font-size: 38px;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .destinations-title {
+    font-size: 32px;
+  }
+  
+  .destination-img-wrapper {
+    height: 280px;
+  }
+}

@@ -1,0 +1,220 @@
+/* Header Base Container */
+.header {
+  width: 100%;
+  padding: 24px 0;
+  background: transparent;
+  font-family: 'Poppins', 'Open Sans', sans-serif;
+  position: relative;
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Styling & Animation */
+.logo {
+  font-size: 32px;
+  font-weight: 700;
+  color: #181e4b;
+  position: relative;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+}
+
+.logo-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #f1a501;
+  border-radius: 50%;
+  margin-left: 2px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.logo:hover .logo-dot {
+  transform: scale(1.4);
+  background-color: #df6951;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Nav Links & Smooth Underline Hover Effect */
+.nav-link {
+  text-decoration: none;
+  color: #212832;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #df6951;
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+.nav-link:hover {
+  color: #df6951;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Sign Up Button Hover Styling */
+.signup-btn {
+  background: transparent;
+  border: 1px solid #212832;
+  border-radius: 5px;
+  padding: 9px 22px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #212832;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.signup-btn:hover {
+  background-color: #df6951;
+  border-color: #df6951;
+  color: #ffffff;
+  box-shadow: 0px 8px 15px rgba(223, 105, 81, 0.25);
+  transform: translateY(-2px);
+}
+
+.signup-btn:active {
+  transform: translateY(0);
+}
+
+/* Language Selector Hover */
+.lang-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #212832;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.lang-selector:hover {
+  color: #df6951;
+  background-color: rgba(223, 105, 81, 0.08);
+}
+
+.arrow-down {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.lang-selector:hover .arrow-down {
+  transform: translateY(2px);
+}
+
+/* Hamburger Menu Button (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #212832;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hamburger Animation when active */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ================= RESPONSIVE STYLES ================= */
+
+/* Tablet Screens (1024px & below) */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 24px;
+  }
+}
+
+/* Mobile Screens (768px & below) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+    gap: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .signup-btn {
+    width: 80%;
+    max-width: 200px;
+  }
+}
